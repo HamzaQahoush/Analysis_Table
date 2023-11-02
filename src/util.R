@@ -143,7 +143,7 @@ write_grouped_data_to_workbook <- function(wb, df_grouped, grouped_val, startRow
   browser()
   # Write grouped_val
   # here 
-  
+  start_row_val <-startRow
   writeData(wb, sheet = 1, x = characteristic_col_str, startCol = 1, startRow = startRow)
   for (i in 1:nrow(df_grouped)) {
     writeData(wb, sheet = 1, x = df_grouped[[grouped_val]][i], startCol = 2, startRow = startRow)
@@ -153,7 +153,7 @@ write_grouped_data_to_workbook <- function(wb, df_grouped, grouped_val, startRow
   
   df_grouped <- df_grouped[, setdiff(names(df_grouped), grouped_val_char), drop = FALSE]
   startCol <- 3
-  startRow <- 4
+  startRow <- start_row_val
   
   for (i in 1:ncol(df_grouped)) {
     

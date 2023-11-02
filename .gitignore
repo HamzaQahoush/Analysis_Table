@@ -9,7 +9,7 @@
 # Session Data files
 .RData
 .RDataTmp
-
+.idea
 # User-specific files
 .Ruserdata
 
